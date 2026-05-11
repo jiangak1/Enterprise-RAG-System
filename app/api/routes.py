@@ -1,14 +1,10 @@
 from fastapi import APIRouter,UploadFile,File
 import os
-
 from app.rag.loader import load_text
 from app.rag.splitter import split_text
 from app.rag.retriever import  retrieve
 from app.rag.chat import ask_llm
-
-
 router = APIRouter()
-
 chunks_store=[]
 
 @router.post("/upload")
