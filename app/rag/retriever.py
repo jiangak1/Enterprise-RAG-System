@@ -1,8 +1,6 @@
-def retrieve(query, chunks):
-    results = []
+from app.rag.vector_store import search_chunks
 
-    for chunk in chunks:
-        if query.lower() in chunk.lower():
-            results.append(chunk)
 
-    return results[:3]
+def retrieve(query,user_id):
+    results = search_chunks(query,user_id)
+    return results

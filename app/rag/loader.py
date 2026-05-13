@@ -1,12 +1,17 @@
-from PyPDF2 import PdfFileReader
-
-def load_text(file_path):
-    with open(file_path, 'r',encoding="utf-8") as f:
-        return f.read()
+from PyPDF2 import PdfReader
 
 def load_pdf(file_path):
-    reader = PdfFileReader(file_path)
+    reader = PdfReader(file_path)
     text=""
     for page in reader.pages:
-        text += page.extractText()
+        text += page.extract_Text()
     return text
+def load_txt(file_path):
+
+    with open(
+        file_path,
+        "r",
+        encoding="utf-8"
+    ) as f:
+        text=f.read()
+        return text
