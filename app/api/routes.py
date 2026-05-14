@@ -1,6 +1,6 @@
 from fastapi import APIRouter,UploadFile,File
 from langchain_community.callbacks.llmonitor_callback import user_ctx
-
+from app.core.logger import logger
 from app.rag.loader import load_pdf,load_txt
 from app.rag.splitter import split_text
 from app.rag.vector_store import add_chunks_to_vectorstore
@@ -33,6 +33,10 @@ async def upload_file(file: UploadFile = File(...)):
         user_id="test_user",
         source=file.filename
         )
+    logger.info(
+        f"upload file : {file.filename}"
+    )
+
     return{
         "message":"success",
         "chunks":len(chunks)
@@ -48,6 +52,9 @@ def upload_web(request:URLRequest):
                               user_id="test_user",
                               source=request.url
                               )
+    logger.info(
+        f"upload url: {request.url}"
+    )
     return{
         "message":"url upload success",
         "chunks":len(chunks)
