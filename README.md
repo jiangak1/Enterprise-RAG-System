@@ -30,3 +30,9 @@ Supports multi-source document ingestion, semantic retrieval, multi-turn convers
 ├── rag/
 ├── routes/
 └── main.py
+#RAG 架构图
+<img width="1488" height="584" alt="2aadafb8-7350-4252-b8f9-88cb50e5c52c" src="https://github.com/user-attachments/assets/3ce4f159-028a-41b0-b989-b858006ba862" />
+
+#安装说明
+pip install -r requirements.txt
+uvicorn app.main:app --reload
