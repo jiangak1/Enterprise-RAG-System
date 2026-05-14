@@ -5,3 +5,28 @@ An enterprise-style Retrieval-Augmented Generation (RAG) platform built with Fas
 
 Supports multi-source document ingestion, semantic retrieval, multi-turn conversation memory, metadata tracking, and persistent vector storage.
 支持多源文档导入、语义检索、多轮对话记忆、元数据追踪，以及持久化向量存储。
+
+## Features | 功能特性
+
+- Multi-source document ingestion (PDF / TXT / URL) | 多源文档导入
+- Semantic retrieval with ChromaDB | 基于 ChromaDB 的语义检索
+- Persistent vector database | 持久化向量数据库
+- Multi-turn RAG conversation memory | 多轮 RAG 对话记忆
+- Metadata tracking | 元数据追踪
+- User isolation support | 用户隔离支持
+- PromptTemplate-based prompt engineering | 基于 PromptTemplate 的提示工程
+- Enterprise-style modular architecture | 企业级模块化架构
+- Logging system for retrieval debugging | 检索调试日志系统
+- ## Tech Stack|技术栈
+- FastAPI
+- ChromaDB
+- LangChain
+- DeepSeek API
+- Python
+- RecursiveCharacterTextSplitter
+- #项目结构
+- app/
+├── core/
+├── rag/
+├── routes/
+└── main.py
